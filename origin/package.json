@@ -1,0 +1,79 @@
+{
+	"name": "origin",
+	"displayName": "Origin",
+	"description": "It is the very first Extension.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*",
+		"onCommand:extension.helloWorld",
+		"onCommand:extension.sayHello",
+		"onCommand:extension.cxk"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "extension.sayHello",
+				"title": "Hello HM"
+			},
+			{
+				"command": "extension.cxk",
+				"title": "CXK plays basketball"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id":"cxk",
+					"title": "鸡你太美",
+					"icon": "images/basketball.svg"
+				}
+			]
+		},
+		"views": {
+			"cxk":[
+				{
+                    "id": "sing",
+					"name": "唱"
+                },
+                {
+                    "id": "jump",
+                    "name": "跳"
+                },
+                {
+                    "id": "rap",
+                    "name": "rap"
+				},
+				{
+					"id":"basketball",
+					"name": "篮球"
+				},
+				{
+					"id": "music",
+					"name": "music"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
